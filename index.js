@@ -9,4 +9,13 @@ async function getMood(){
     })
     const data = await respone.json();
     document.getElementById("result").textContent = `Your result is: ${data.result.type}`
+    if(data.result.type==="positive"){
+        document.getElementById('result').classList='positive';
     }
+    if(data.result.type==="negative"){
+        document.getElementById('result').classList='negative';
+    }
+    if(data.result.type==="neutral"){
+        document.getElementById('result').classList='neutral';
+    }
+}

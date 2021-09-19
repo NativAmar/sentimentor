@@ -6,3 +6,12 @@ body{
     font-weight: bold;
     font-size: large;
 }
+.positive{
+    color: green;
+}
+.negative{
+    color: red;
+}
+.neutral{
+    color: gray;
+}
