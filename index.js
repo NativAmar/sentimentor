@@ -1,6 +1,7 @@
 const loadingEl= document.getElementById("loading")
 document.getElementById("clickmood").addEventListener("click",()=>{getMood()})
 async function getMood(){
+    try{
     loadingEl.hidden= false;
     const respone = await fetch("https://sentim-api.herokuapp.com/api/v1/",{
         headers:{
@@ -22,4 +23,10 @@ async function getMood(){
     else if(data.result.type==="neutral"){
         document.getElementById('result').classList='neutral';
     }
+    
+}
+catch(error){
+    const errorEl=document.getElementById('mistake');
+    errorEl.textContent='You had a API problem'
+}
 }
